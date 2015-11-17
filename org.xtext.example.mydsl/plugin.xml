@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<plugin>
+
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package 
+       uri = "http://www.xtext.org/example/mydsl/MyDsl" 
+       class = "org.xtext.example.mydsl.myDsl.MyDslPackage"
+       genModel = "model/generated/MyDsl.genmodel" /> 
+	
+  </extension>
+  <extension
+        point="org.eclipse.ui.popupMenus">
+     <objectContribution
+           id="org.xtext.example.mydsl.contribution1"
+           objectClass="org.eclipse.core.resources.IFile">
+        <menu
+              id="org.xtext.example.mydsl.menu1"
+              label="IoTSuite"
+              path="additions">
+           <separator
+                 name="group1">
+           </separator>
+        </menu>
+        <action
+              class="org.xtext.example.mydsl.popup.actions.CompileVocabularySpec"
+              enablesFor="1"
+              id="org.xtext.example.mydsl.newAction"
+              label="Compile Vocab.mydsl"
+              menubarPath="org.xtext.example.mydsl.menu1/group1">
+        </action>
+        <action
+              class="org.xtext.example.mydsl.popup.actions.CompileDeploySpec"
+              enablesFor="1"
+              id="org.xtext.example.mydsl.action2"
+              label="Compile Deploy.mydsl"
+              menubarPath="org.xtext.example.mydsl.menu1/group1">
+        </action>
+        <action
+              class="org.xtext.example.mydsl.popup.actions.CompileInteractionSpec"
+              enablesFor="1"
+              id="org.xtext.example.mydsl.action3"
+              label="Compile Interaction.mydsl"
+              menubarPath="org.xtext.example.mydsl.menu1/group1">
+        </action>
+        <action
+              class="org.xtext.example.mydsl.popup.actions.CompileArchSpec"
+              enablesFor="1"
+              id="org.xtext.example.mydsl.action1"
+              label="Compile Arch.mydsl"
+              menubarPath="org.xtext.example.mydsl.menu1/group1">
+        </action>
+     </objectContribution>
+  </extension>
+
+
+
+</plugin>
